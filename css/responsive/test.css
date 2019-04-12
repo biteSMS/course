@@ -1,0 +1,12 @@
+.container {
+  /* margin: 0 auto; */
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: 20vw 80vw !important;
+}
+main {
+  grid-area: 'b';
+}
+aside {
+  grid-area: 'a';
+}

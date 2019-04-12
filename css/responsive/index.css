@@ -1,0 +1,30 @@
+/* @import url(./test.css) (min-width: 768px); */
+.container {
+  margin: 0 auto;
+  width: 900px;
+  display: grid;
+  grid-template-columns: 600px 300px;
+  grid-template-rows: 800px;
+  grid-gap: 20px;
+}
+main {
+  background: red;
+}
+aside {
+  background: blue;
+}
+
+@media (max-width: 940px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20vw 80vw;
+    grid-gap: 2vw;
+  }
+  main {
+    grid-row: 2;
+  }
+  aside {
+    grid-area: 'a';
+  }
+}
