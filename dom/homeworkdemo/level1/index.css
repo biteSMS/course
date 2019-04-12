@@ -1,0 +1,5 @@
+.square {
+    position: relative;
+    background: red;
+    transition: all .5s;
+}
