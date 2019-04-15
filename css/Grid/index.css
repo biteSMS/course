@@ -1,7 +1,11 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+                      'a a b'
+                      'a a d'
+                      'c e d';
   grid-gap: 15px;
 }
 
@@ -12,22 +16,27 @@
 
 .item-1 {
   background-color: #ef342a;
+  grid-area: a;
 }
 
 .item-2 {
   background-color: #f68f26;
+  grid-area: b;
 }
 
 .item-3 {
   background-color: #4ba946;
+  grid-area: c;
 }
 
 .item-4 {
   background-color: #0376c2;
+  grid-area: d;
 }
 
 .item-5 {
   background-color: #c077af;
+  grid-area: e;
 }
 
 .item-6 {
