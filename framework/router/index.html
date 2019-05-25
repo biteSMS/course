@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="homepage">homepage</button>
+  <button id="about">about</button>
+  <div class="container"></div>
+</body>
+<script>
+  let homepage = document.querySelector('#homepage')
+  let about = document.querySelector('#about')
+  let container = document.querySelector('.container')
+
+  homepage.addEventListener('click', () => {
+    history.pushState('homepage', null, 'homepage')
+    updateView()
+  })
+  about.addEventListener('click', () => {
+    history.pushState('about', null, 'about')
+    updateView()
+  })
+  function updateView() {
+    if (history.state === 'homepage') {
+      container.innerHTML = 'homepage'
+    } else if (history.state = 'about') {
+      container.innerHTML = 'about'
+    } else {
+      container.innerHTML = ''
+    }
+  }
+  window.addEventListener('popstate', () => {
+    updateView()
+  })
+  // window.addEventListener('load', () => {
+  //   updateView()
+  // })
+
+  
+
+</script>
+</html>

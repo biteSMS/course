@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p id="p"></p>
+      <button id="change">change</button>
+      <input type="text" id="input">
+    </div>
+    <script>
+      let p = document.querySelector("#p")
+      let change = document.querySelector("#change")
+      let input = document.querySelector("#input")
+
+      let data = {}
+      let test
+      Object.defineProperty(data, 'test', {
+        set(val) {
+          p.innerHTML = val
+          test = val
+        },
+        get() {
+          return test
+        }
+      })
+
+      change.addEventListener('click', () => {
+        data.test = 0
+        setInterval(() => {
+          data.test += 1
+        }, 1000)
+      })
+
+      input.addEventListener('input', e => {
+        data.test = e.target.value
+      })
+    </script>
+  </body>
+</html>
