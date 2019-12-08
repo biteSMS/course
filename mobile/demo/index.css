@@ -4,7 +4,21 @@
 }
 
 .container {
-  background: red;
-  width: 200px;
-  height: 200px;
+  /* background: red;
+  width: 13.33vw;
+  height: 13.33vw; */
+  /* font-size: 20px; */
+  display: flex;
+}
+
+.foo {
+  background: pink;
+  width: 100px;
+  height: 100px;
+}
+
+.bar {
+  background: powderblue;
+  width: calc(50vw - 100px);
+  height: 100px;
 }

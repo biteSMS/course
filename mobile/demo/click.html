@@ -26,6 +26,7 @@
     var button = document.querySelector('#btn')
     button.addEventListener('touchstart', function(e) {
       button.style.display = 'none'
+      e.preventDefault()
     })
   </script>
 </body>

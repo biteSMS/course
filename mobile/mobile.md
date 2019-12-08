@@ -26,11 +26,11 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 
 理论上来讲，在白色手机上相同大小的图片和文字，在黑色手机上会被缩放一倍，因为它的分辨率提高了一倍。这样，岂不是后面出现更高分辨率的手机，页面元素会变得越来越小吗？
 
-<img src="./assets/dip1.png" style="zoom:40%;" />
+<img src="http://cdn.pannnda.com/course/mobile/assets/dip1.png" style="zoom:40%;" />
 
 然而，事实并不是这样的，我们现在使用的智能手机，不管分辨率多高，他们所展示的界面比例都是基本类似的。
 
-<img src="./assets/dip2.png" style="zoom:40%;" />
+<img src="http://cdn.pannnda.com/course/mobile/assets/dip2.png" style="zoom:40%;" />
 
 所以我们必须用一种单位来同时告诉不同分辨率的手机，它们在界面上显示元素的大小是多少，这个单位就是设备独立像素(Device Independent Pixels)，简称 DIP。
 
@@ -45,6 +45,8 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 浏览器为我们提供了 window.devicePixelRatio 来帮助我们获取 dpr。
 
 实际上，从苹果提出视网膜屏幕开始，才出现设备像素比这个概念，因为在这之前，移动设备都是直接使用物理像素来进行展示。
+
+![](./assets/dpr.jpeg)
 
 ### CSS 像素
 
@@ -62,7 +64,7 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 
 **布局视口**
 
-<img src="./assets/layout.png" style="zoom:50%;" />
+<img src="http://cdn.pannnda.com/course/mobile/assets/layout.png" style="zoom:50%;" />
 
 布局视口(layout viewport)：当我们以百分比来指定一个元素的大小时，它的计算值是由这个元素的包含块计算而来的。当这个元素是最顶级的元素时，它就是基于布局视口来计算的。
 
@@ -74,7 +76,7 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 
 **视觉窗口**
 
-<img src="./assets/visual.png" style="zoom:50%;" />
+<img src="http://cdn.pannnda.com/course/mobile/assets/visual.png" style="zoom:50%;" />
 
 视觉视口(visual viewport)：用户通过屏幕真实看到的区域。
 
@@ -120,7 +122,7 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 
 ### CSS 单位 rem
 
-在[W3C](http://www.w3.org/TR/css3-values/#rem-unit)规范中是这样描述`rem`的:
+在 [W3C](http://www.w3.org/TR/css3-values/#rem-unit) 规范中是这样描述`rem`的:
 
 > font size of the root element.
 
@@ -149,7 +151,7 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 - `vw(Viewport's width)`：`1vw`等于视觉视口的`1%`
 - `vh(Viewport's height)` :`1vh` 为视觉视口高度的`1%`
 
-<img src="./assets/vw.png" style="zoom:40%;"/>
+<img src="http://cdn.pannnda.com/course/mobile/assets/vw.png" style="zoom:40%;"/>
 
 Flexible 的设计其实就为后面转换 vw 单位做了伏笔，这是设计者强大之处，当初设计的时候就有vw的影子存在。以前的 Flexible 方案是通过 JavaScript 来模拟`vw`的特性，那么到今天为止，`vw`已经得到了众多浏览器的支持，也就是说，可以直接考虑将`vw`单位运用于我们的适配布局中。
 
@@ -159,11 +161,11 @@ Flexible 的设计其实就为后面转换 vw 单位做了伏笔，这是设计�
 
 ## 横屏适配
 
-<img src="./assets/landscape.png" style="zoom:40%;"/>
+<img src="http://cdn.pannnda.com/course/mobile/assets/landscape.png" style="zoom:40%;"/>
 
 很多时候我们要对横屏和竖屏显示不同的布局，所以我们需要检测在不同的场景下给定不同的样式
 
-### JavaScript检测
+### JavaScript 检测
 
 `window.orientation`:获取屏幕旋转方向
 
@@ -180,7 +182,7 @@ window.addEventListener("resize", ()=>{
 }); 
 ```
 
-### CSS检测横屏
+### CSS 检测横屏
 
 ```css
 @media screen and (orientation: portrait) {
@@ -197,7 +199,7 @@ window.addEventListener("resize", ()=>{
 
 安全区域指的是一个可视窗口范围，处于安全区域的内容不受圆角（corners）、齐刘海（sensor housing）、小黑条（Home Indicator）影响，如下图所示：
 
-<img src="./assets/safe-area.png" style="zoom:70%;" />
+<img src="http://cdn.pannnda.com/course/mobile/assets/safe-area.png" style="zoom:70%;" />
 
 ### viewport-fit
 
@@ -212,7 +214,7 @@ iOS11 新增特性，苹果公司为了适配 iPhoneX 对现有 Meta viewport �
 <meta name="viewport" content="viewport-fit=cover">
 ```
 
-<img src="./assets/viewport-fit.png" style="zoom:50%;" />
+<img src="http://cdn.pannnda.com/course/mobile/assets/viewport-fit.png" style="zoom:50%;" />
 
 ## 移动端事件
 
@@ -225,7 +227,7 @@ iOS11 新增特性，苹果公司为了适配 iPhoneX 对现有 Meta viewport �
 | touchend    | 当在屏幕上抬起手指时触发                                     |
 | touchcancel | 当一些更高级别的事件发生的时候（如电话接入或者弹出信息）会取消当前的touch操作，即触发touchcancel。一般会在touchcancel时暂停游戏、存档等操作。 |
 
-移动端的 click 事件比 PC 端上的.click 事件响应的慢 300ms
+移动端的 click 事件比 PC 端上的 click 事件响应的慢 300ms
 
 这是由于浏览器为了能够实现双击缩放，需要判断用户在第一次触碰屏幕之后，是否在 300ms 之内再次点击，有则表明用户希望缩放和放大，所以 click 事件会推迟到 300ms 之后运行。
 
