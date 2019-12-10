@@ -1,5 +1,3 @@
-# **Web前端第七节课**
-
 ## 一些基本概念
 
 ### 像素
@@ -46,7 +44,7 @@ iPhone XS Max 的分辨率分别为 2688 x 1242。这表示手机分别在垂直
 
 实际上，从苹果提出视网膜屏幕开始，才出现设备像素比这个概念，因为在这之前，移动设备都是直接使用物理像素来进行展示。
 
-![](./assets/dpr.jpeg)
+![](http://cdn.pannnda.com/course/mobile/assets/dpr.jpeg)
 
 ### CSS 像素
 
@@ -216,6 +214,17 @@ iOS11 新增特性，苹果公司为了适配 iPhoneX 对现有 Meta viewport �
 
 <img src="http://cdn.pannnda.com/course/mobile/assets/viewport-fit.png" style="zoom:50%;" />
 
+### env、constant
+
+我们需要将顶部和底部合理的摆放在安全区域内，`iOS11`新增了两个`CSS`函数`env、constant`，用于设定安全区域与边界的距离。
+
+函数内部可以是四个常量：
+
+- `safe-area-inset-left`：安全区域距离左边边界距离
+- `safe-area-inset-right`：安全区域距离右边边界距离
+- `safe-area-inset-top`：安全区域距离顶部边界距离
+- `safe-area-inset-bottom`：安全区域距离底部边界距离
+
 ## 移动端事件
 
 最基本的 touch 事件包括4个事件
@@ -258,5 +267,23 @@ iOS11 新增特性，苹果公司为了适配 iPhoneX 对现有 Meta viewport �
 
   fastclick.js 的实现原理是在检测到 touchend 事件的时候，会通过 DOM 自定义事件立即出发模拟一个 click 事件，并把浏览器在 300ms 之后真正的 click 事件阻止掉。
 
+## 作业
 
+切图 -> [下载地址](http://cdn.pannnda.com/course/mobile/assets/aboutus-mobile.psd)
+
+要求基本还原设计图，适配不同分辨率的移动端。作业交给自己的导师，不限提交时间。
+
+**作业素材网校有版权，禁止外传！**
+
+## 参考
+
+> [使用 Flexible 实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
+>
+> [再聊移动端页面的适配](https://www.w3cplus.com/css/vw-for-layout.html)
+>
+> [如何在 Vue 项目中使用vw实现移动端适配](https://www.w3cplus.com/mobile/vw-layout-in-vue.html)
+>
+> [Can I use](https://www.caniuse.com/)
+>
+> [W3C](https://www.w3.org/)
 
